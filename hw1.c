@@ -1,6 +1,9 @@
 #include <stdio.h>
-
+#include "A.h"
 void main()
-{
-	printf("hello world");
+{	
+	int i;
+	printf("%d\n",NODE);
+	
+	
 }

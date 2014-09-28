@@ -1,9 +1,11 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "A.h"
 void main()
 {	
-	int i, j;
-	
+	int i, j, k=0;
+	char obj[999]="min ",temp[5],x[2]="x",plus[2]="+";
 	//test simple topology
 	int cost[6][6]=
 	{
@@ -15,14 +17,28 @@ void main()
 	  /*  4*/{ -1, 11,  9,  2, -1,  4,},
 	  /*  5*/{ -1, -1, -1,  8,  4, -1,},
 	};
-	for(i=0;i<6;i++)
+	for(j=0;j<6;j++)//row
 	{
-		for(j=0;j<6;j++)
+		for(i=0;i<6;i++)//column
 		{
-			printf("%3d, ",cost[j][i]);
+			printf("%3d, ",cost[i][j]);
+			if(cost[i][j] != -1)
+			{
+				sprintf(temp,"%d",cost[i][j]);
+				strcat(obj, temp);
+				strcat(obj, x);
+				sprintf(temp,"%d%d",j,i);
+				strcat(obj, temp);
+				strcat(obj, plus);
+			}
 		}
 		printf("\n");
 	}
 	
-	
+	/*sprintf(obj,"%d",i);
+	strcat(obj, x);
+	sprintf(temp,"%d%d",i,j);
+	strcat(obj, temp);
+	strcat(obj, plus);*/
+	printf("%s\n",obj);
 }

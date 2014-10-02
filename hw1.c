@@ -17,9 +17,9 @@ void main()
 	  /*  4*/{ -1, 11,  9,  2, -1,  4,},
 	  /*  5*/{ -1, -1, -1,  8,  4, -1,},
 	};
-	for(j=0;j<6;j++)//row
+	for(i=0;i<6;i++)//row 行
 	{
-		for(i=0;i<6;i++)//column
+		for(j=0;j<6;j++)//column 列
 		{
 			printf("%3d, ",cost[i][j]);
 			if(cost[i][j] != -1)

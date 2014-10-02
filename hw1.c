@@ -4,7 +4,7 @@
 #include "A.h"
 void main()
 {	
-	int i, j, k=0;
+	int i, j, k=0,count=0;
 	char obj[999]="min ",temp[5],x[2]="x",plus[2]="+";
 	//test simple topology
 	int cost[6][6]=
@@ -27,18 +27,13 @@ void main()
 				sprintf(temp,"%d",cost[i][j]);
 				strcat(obj, temp);
 				strcat(obj, x);
-				sprintf(temp,"%d%d",j,i);
+				count++;
+				sprintf(temp,"%d",count );
 				strcat(obj, temp);
 				strcat(obj, plus);
 			}
 		}
 		printf("\n");
 	}
-	
-	/*sprintf(obj,"%d",i);
-	strcat(obj, x);
-	sprintf(temp,"%d%d",i,j);
-	strcat(obj, temp);
-	strcat(obj, plus);*/
 	printf("%s\n",obj);
 }

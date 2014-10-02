@@ -4,7 +4,7 @@
 #include "A.h"
 void main()
 {	
-	int i, j, k=0,count=0;
+	int i, j, k=0;
 	char obj[999]="min ",temp[5],x[2]="x",plus[2]="+";
 	char const1[100]="", equal[2]="=", const2[100]="";
 	//test simple topology
@@ -29,21 +29,20 @@ void main()
 				sprintf(temp,"%d",cost[i][j]);
 				strcat(obj, temp);
 				strcat(obj, x);
-				count++;
-				sprintf(temp,"%d",count );
+				sprintf(temp,"%d%d",i,j);
 				strcat(obj, temp);
 				strcat(obj, plus);
 				if(i==0)//source node=0
 				{
 					strcat(const1, x);
-					sprintf(temp,"%d",count );
+					sprintf(temp,"%d%d",i, j);
 					strcat(const1, temp);
                                 	strcat(const1, plus);
 				}
 				if(j==5)//destination node = 5
 				{
 					strcat(const2, x);
-                                        sprintf(temp,"%d",count );
+                                        sprintf(temp,"%d%d", i, j);
                                         strcat(const2, temp);
                                         strcat(const2, plus);
 				}

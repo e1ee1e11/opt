@@ -27,7 +27,7 @@ void main()
 				sprintf(temp,"%d",cost[i][j]);
 				strcat(obj, temp);
 				strcat(obj, x);
-				sprintf(temp,"%d%d",j,i);
+				sprintf(temp,"%d%d",i,j);
 				strcat(obj, temp);
 				strcat(obj, plus);
 			}

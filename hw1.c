@@ -7,6 +7,7 @@ void main()
 	int i, j, k=0;
 	char obj[999]="min ",temp[5],x[2]="x",plus[2]="+";
 	char const1[100]="", equal[2]="=", const2[100]="";
+	char left1[50]="", right1[50]="" ,node1[100]="";
 	//test simple topology
 	int cost[6][6]=
 	{
@@ -32,14 +33,14 @@ void main()
 				sprintf(temp,"%d%d",i,j);
 				strcat(obj, temp);
 				strcat(obj, plus);
-				if(i==0)//source node=0
+				if(i==0)//source: node0
 				{
 					strcat(const1, x);
 					sprintf(temp,"%d%d",i, j);
 					strcat(const1, temp);
                                 	strcat(const1, plus);
 				}
-				if(j==5)//destination node = 5
+				if(j==5)//destination: node5
 				{
 					strcat(const2, x);
                                         sprintf(temp,"%d%d", i, j);
@@ -55,8 +56,41 @@ void main()
 	strcat(const1, "1");
 	strcat(const2, equal);
         strcat(const2, "1");
-	//result
+	//flow conservation law, in=out
+	for(i=0;i<6;i++)
+	{
+		for(j=0;j<6;j++)
+		{
+			if(cost[i][j] != -1)
+                        {
+
+				if(i==1)//left1
+                        	{
+                               		strcat(left1, x);
+                               		sprintf(temp,"%d%d",i, j);
+                                	strcat(left1, temp);
+                                	strcat(left1, plus);   
+                        	}
+				if(j==1)
+				{
+					strcat(right1, x);
+                                	sprintf(temp,"%d%d",i, j);
+                                	strcat(right1, temp);
+                                	strcat(right1, plus);
+				}
+			}
+		}
+	}
+	
+	//result obj, constriant 1 & 2
 	printf("%s\n", obj);
+	printf("subject to\n");
 	printf("%s\n", const1);
 	printf("%s\n", const2);
+
+	//result other
+	strcat(node1, left1);
+	strcat(node1, equal);
+	strcat(node1, right1);
+	printf("%s\n", node1);
 }

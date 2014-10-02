@@ -6,6 +6,7 @@ void main()
 {	
 	int i, j, k=0,count=0;
 	char obj[999]="min ",temp[5],x[2]="x",plus[2]="+";
+	char const1[100]="", equal[2]="=", const2[100]="";
 	//test simple topology
 	int cost[6][6]=
 	{
@@ -17,9 +18,10 @@ void main()
 	  /*  4*/{ -1, 11,  9,  2, -1,  4,},
 	  /*  5*/{ -1, -1, -1,  8,  4, -1,},
 	};
-	for(j=0;j<6;j++)//row
+	//making objective function
+	for(i=0;i<6;i++)//cloumn 列
 	{
-		for(i=0;i<6;i++)//column
+		for(j=0;j<6;j++)//row 行
 		{
 			printf("%3d, ",cost[i][j]);
 			if(cost[i][j] != -1)
@@ -31,9 +33,31 @@ void main()
 				sprintf(temp,"%d",count );
 				strcat(obj, temp);
 				strcat(obj, plus);
+				if(i==0)//source node=0
+				{
+					strcat(const1, x);
+					sprintf(temp,"%d",count );
+					strcat(const1, temp);
+                                	strcat(const1, plus);
+				}
+				if(j==5)//destination node = 5
+				{
+					strcat(const2, x);
+                                        sprintf(temp,"%d",count );
+                                        strcat(const2, temp);
+                                        strcat(const2, plus);
+				}
 			}
 		}
 		printf("\n");
 	}
-	printf("%s\n",obj);
+	//constriant 頭尾=1,source=0,destination=5
+	strcat(const1, equal);
+	strcat(const1, "1");
+	strcat(const2, equal);
+        strcat(const2, "1");
+	//result
+	printf("%s\n", obj);
+	printf("%s\n", const1);
+	printf("%s\n", const2);
 }

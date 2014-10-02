@@ -34,11 +34,5 @@ void main()
 		}
 		printf("\n");
 	}
-	
-	/*sprintf(obj,"%d",i);
-	strcat(obj, x);
-	sprintf(temp,"%d%d",i,j);
-	strcat(obj, temp);
-	strcat(obj, plus);*/
 	printf("%s\n",obj);
 }

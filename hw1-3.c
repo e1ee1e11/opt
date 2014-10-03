@@ -35,7 +35,7 @@ void main(void)
 	//  /*  5*/{ -1, -1, -1,  8,  4, -1,},
 	//};
 	//making objective function
-	/*for(i=0;i<NODE;i++)//cloumn 列
+	for(i=0;i<NODE;i++)//cloumn 列
 	{
 		for(j=0;j<NODE;j++)//row 行
 		{
@@ -51,7 +51,7 @@ void main(void)
 			}
 		}
 		printf("\n");
-	}*/
+	}
 	//flow conservation law, in=out
 	for(i=0;i<NODE;i++)
 	{
@@ -359,7 +359,7 @@ void main(void)
                                 sprintf(temp,"%d%d",i, j);
                                 strcat(bound, temp);
                                 strcat(bound, sequal);
-                                sprintf(temp,"%d", COST[i][j]);
+                                sprintf(temp,"%d", 4);
                                 strcat(bound, temp);
                                 printf("%s\n", bound);
                                 strcpy(bound, zsex);

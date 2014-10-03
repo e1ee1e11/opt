@@ -5,8 +5,9 @@
 void main(void)
 {	
 	int i, j;
-	char obj[999]="Maximize v",
-	     temp[5],x[2]="x", plus[2]="+", minus[2]="-", equal[2]="=";
+	char obj[999]="Maximize v", temp[5],x[2]="x", bound[25]="0<=x",
+	     plus[2]="+", minus[2]="-", equal[2]="=", sequal[3]="<=",
+	     zsex[5]="0<=x";
 	char left0[50]="", right0[50]="" ,node0[100]="";
 	char left1[50]="", right1[50]="" ,node1[100]="";
 	char left2[50]="", right2[50]="" ,node2[100]="";
@@ -257,7 +258,6 @@ void main(void)
 			}
 		}
 	}
-
 	//result objective function
 	printf("%s\n", obj);
 	printf("Subject To\n");
@@ -347,4 +347,24 @@ void main(void)
         strcat(node13, equal);
         strcat(node13, "0");
         printf("%s\n", node13);
+
+	//print Bounds
+        printf("Bounds\n");
+        for(i=0;i<NODE;i++)
+        {
+                for(j=0;j<NODE;j++)
+                {
+                        if(COST[i][j] != -1)
+                        {
+                                sprintf(temp,"%d%d",i, j);
+                                strcat(bound, temp);
+                                strcat(bound, sequal);
+                                sprintf(temp,"%d", COST[i][j]);
+                                strcat(bound, temp);
+                                printf("%s\n", bound);
+                                strcpy(bound, zsex);
+                        }
+                }
+        }
+
 }

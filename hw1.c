@@ -5,7 +5,7 @@
 void main(void)
 {	
 	int i, j;
-	char obj[999]="min ",temp[5],x[2]="x", plus[2]="+", minus[2]="-";
+	char obj[999]="Minisize ",temp[5],x[2]="x", plus[2]="+", minus[2]="-";
 	char const1[100]="", equal[2]="=", const2[100]="";
 	char left1[50]="", right1[50]="" ,node1[100]="";
 	char left2[50]="", right2[50]="" ,node2[100]="";
@@ -91,10 +91,11 @@ void main(void)
                         	}
 				if(j==1)//right1
 				{
+					strcat(right1, minus);
 					strcat(right1, x);
                                 	sprintf(temp,"%d%d",i, j);
                                 	strcat(right1, temp);
-                                	strcat(right1, plus);
+                                	//strcat(right1, plus);
 				}
 				if(i==2)//left2
                                 {
@@ -105,10 +106,11 @@ void main(void)
                                 }
                                 if(j==2)//right2
                                 {
+					strcat(right2, minus);
                                         strcat(right2, x);
                                         sprintf(temp,"%d%d",i, j);
                                         strcat(right2, temp);
-                                        strcat(right2, plus);
+                                        //strcat(right2, plus);
                                 }
 				if(i==3)//left3
                                 {
@@ -119,10 +121,11 @@ void main(void)
                                 }
                                 if(j==3)//right3
                                 {
+					strcat(right3, minus);
                                         strcat(right3, x);
                                         sprintf(temp,"%d%d",i, j);
                                         strcat(right3, temp);
-                                        strcat(right3, plus);
+                                        //strcat(right3, plus);
                                 }
 				if(i==4)//left4
                                 {
@@ -133,10 +136,11 @@ void main(void)
                                 }
                                 if(j==4)//right4
                                 {
+					strcat(right4, minus);
                                         strcat(right4, x);
                                         sprintf(temp,"%d%d",i, j);
                                         strcat(right4, temp);
-                                        strcat(right4, plus);
+                                        //strcat(right4, plus);
                                 }
 
 			}
@@ -145,29 +149,33 @@ void main(void)
 	
 	//result obj, constriant 1 & 2
 	printf("%s\n", obj);
-	printf("subject to\n");
+	printf("Subject To\n");
 	printf("%s\n", const1);
 	printf("%s\n", const2);
 
 	//result other
 	strcat(node1, left1);
-	strcat(node1, equal);
 	strcat(node1, right1);
+	strcat(node1, equal);
+	strcat(node1, "0");
 	printf("%s\n", node1);
 	
 	strcat(node2, left2);
-        strcat(node2, equal);
         strcat(node2, right2);
-        printf("%s\n", node2);
+        strcat(node2, equal);
+	strcat(node2, "0");
+	printf("%s\n", node2);
 	
 	strcat(node3, left3);
-        strcat(node3, equal);
         strcat(node3, right3);
-        printf("%s\n", node3);
+        strcat(node3, equal);
+	strcat(node3, "0");
+	printf("%s\n", node3);
 	
 	strcat(node4, left4);
-        strcat(node4, equal);
         strcat(node4, right4);
+	strcat(node4, equal);
+	strcat(node4, "0"); 
         printf("%s\n", node4);
 
 }

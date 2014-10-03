@@ -5,7 +5,7 @@
 void main(void)
 {	
 	int i, j;
-	char obj[999]="Minimize ",
+	char obj[999]="Maximize v",
 	     temp[5],x[2]="x", plus[2]="+", minus[2]="-", equal[2]="=";
 	char left0[50]="", right0[50]="" ,node0[100]="";
 	char left1[50]="", right1[50]="" ,node1[100]="";
@@ -34,7 +34,7 @@ void main(void)
 	//  /*  5*/{ -1, -1, -1,  8,  4, -1,},
 	//};
 	//making objective function
-	for(i=0;i<NODE;i++)//cloumn 列
+	/*for(i=0;i<NODE;i++)//cloumn 列
 	{
 		for(j=0;j<NODE;j++)//row 行
 		{
@@ -50,7 +50,7 @@ void main(void)
 			}
 		}
 		printf("\n");
-	}
+	}*/
 	//flow conservation law, in=out
 	for(i=0;i<NODE;i++)
 	{

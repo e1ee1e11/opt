@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include "A.h"
-void main()
+void main(void)
 {	
-	int i, j, k=0;
-	char obj[999]="min ",temp[5],x[2]="x",plus[2]="+";
+	int i, j;
+	char obj[999]="min ",temp[5],x[2]="x", plus[2]="+", minus[2]="-";
 	char const1[100]="", equal[2]="=", const2[100]="";
 	char left1[50]="", right1[50]="" ,node1[100]="";
 	char left2[50]="", right2[50]="" ,node2[100]="";
@@ -43,6 +43,13 @@ void main()
 					strcat(const1, temp);
                                 	strcat(const1, plus);
 				}
+				if(j==0)
+				{
+					strcat(const1, minus);
+					strcat(const1, x);
+					sprintf(temp,"%d%d",i, j);
+                                        strcat(const1, temp);
+				}
 				if(j==5)//destination: node5
 				{
 					strcat(const2, x);
@@ -50,6 +57,14 @@ void main()
                                         strcat(const2, temp);
                                         strcat(const2, plus);
 				}
+				if(i==5)
+                                {
+                                        strcat(const2, minus);
+                                        strcat(const2, x);
+                                        sprintf(temp,"%d%d",i, j);
+                                        strcat(const2, temp);
+                                }
+
 			}
 		}
 		printf("\n");

@@ -359,7 +359,7 @@ void main(void)
                                 sprintf(temp,"%d%d",i, j);
                                 strcat(bound, temp);
                                 strcat(bound, sequal);
-                                sprintf(temp,"%d", 4);
+                                sprintf(temp,"%d", 10);
                                 strcat(bound, temp);
                                 printf("%s\n", bound);
                                 strcpy(bound, zsex);
